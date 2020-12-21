@@ -350,20 +350,144 @@ How to use vms?
   999  docker run -d -p 8080:8080 jenkins/jenkins
  1000  docker run -d -p 8090:8080 jenkins/jenkins
  1001  history
+===============================================================
+===============================================================
+SonarQube
+===============================================================
+===============================================================
+What is SonarQube
+------------------
+	Quality Management Tool
+		Rules
+		Multiple Projects
+		History
+		Dashboard - Who | what | where | how | 
+		Quality Profile
+		Quality Gates
+		Notification
+		RBAC
+	Release
+		Communit	FREE and OS
+		Dev		PAID
+		Enterp		PAID
+		Data center	PAID
+	Version
+		8.X
+	Written in Java
+
+	Quality 
+	- Code Quality
+	- Test Quality
+
+	How to get Code Quality?
+	--------------------------
+	- Peers Code Review
+	- Static Code Review
+	----------------------
+	Written Compiled Code 	would do a Code Review
+	Rule 			would do a Code Review
+	Rule(S) 		would do a Code Review
+	Tool			would do a Code Review
+	---
+	Static Code Analysis Tool
+	https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis
+
+Why SonarQube?
+===================
+
+Architecuture of SonarQube?
+------------------------------
+Server			DONE
+--------------
+	Dashboard		
+		Issues
+		Quality Profile
+		Qualuty Gates
+		Rules
+	Database
+		MSSQL
+		H2
+		ORACLE
+		PS
+	ElasticSearch
+
+Dev Desk
+-------------
+Scanner
+	Command
+	Maven	
+	Gradle
+	AzureDevOps
+	ant
+https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/
+WINDWS _ https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.5.0.2216-windows.zip
+
+Linux - https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.5.0.2216-linux.zip
 
 
+Code
+	- ANY 15+
+https://github.com/devopsschool-demo-labs-projects/java-sonarqube-helloworld-src
 
 
+https://www.devopsschool.com/videos/show/docker?type=video
 
+How to install it?
+==============================
 
+=============================================================
+=============================================================
+How to install SonarQube in Linux?
+=========================================
+Step 1 - Install JAVA
+$ sudo yum list installed
+$ sudo yum list installed | grep java
+$ sudo yum remove <<all java7&8>
+$ yum install java-11-openjdk-devel
+$ systemctl stop firewalld
+$ systemctl disable firewalld
 
+Step 2 - Download and Install and run SonarQube server
+$ yum install wget unzip -y
+$ su centos
+$ cd
+$ wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.4.1.35646.zip
+$ unzip sonarqube-8.4.1.35646.zip
+$ mv sonarqube-8.4.1.35646 sonarqube-server
+$ cd sonarqube-server/bin/linux-x86-64
+$ ./sonar.sh start
+$ ./sonar.sh status
 
+http://52.66.244.67:9000/
+admin
+admin
 
+==========================
+Step 1 - Download Scanner
 
+Step 2 - Download Src Code
+cd C:\tools\sonarqube\code\
+git clone https://github.com/devopsschool-demo-labs-projects/java-sonarqube-helloworld-src
 
+Step 3 - Change Source Code sonar-project.properties.
+	i.e - C:\tools\sonarqube\code\java-sonarqube-helloworld-src
 
+# Required metadata
+sonar.projectKey=org.sonarqube:devopsschool
+sonar.projectName=DevOpsSchool.com
+sonar.projectVersion=1.0
+----
+&&&
+sonar.login=admin
+sonar.password=admin
 
+Step 4 - Change Scanner conf file with SonarQube server add
+		sonar-scanner.properties under C:\tools\sonarqube\scanner\sonar-scanner-cli-4.5.0.2216-windows\conf
 
-
-
-
+#----- Default SonarQube server
+sonar.host.url=http://52.66.244.67:9000/
+===========================================
+RUN 
+	SCANNER - C:\tools\sonarqube\scanner\sonar-scanner-cli-4.5.0.2216-windows\bin\sonar-scanner.bat
+		ON THE 
+			Source Code. - C:\tools\sonarqube\code\java-sonarqube-helloworld-src

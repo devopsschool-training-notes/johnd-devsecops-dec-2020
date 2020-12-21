@@ -247,6 +247,122 @@ Stop Vs Kill
 Pause Vs Unpause
 ===========================================30 min===========================
 
+Rule of PID 1
+================================================================================
+Physical server		| 	Virtual server	| 	Container 
+Coz PID1 			Coz PID1		Coz PID1
+is running			is running		is running
+
+
+
+PID1 is systemd			PID1 is systemd		PID1 is Anything	
+							bin/bash
+							perl
+							python
+							java
+							x
+							y
+
+==================================================================
+RUN
+===================================
+pull + create + start + BECOME a container or Attach to PID1
+
+docker run jenkins/jenkins
+---------------------
+ (pull + create + start + BECOME a container or Attached to PID1)
+
+RUN -d
+===================================
+pull + create + start + DO NOT BECOME a container or DO NOT Attached to PID1
+
+
+==================================================================
+How to use container?
+-------------------------------
+How to use vms?
+-------------------------------
+1. go inside...using SHELL
+- exec
+	to execute an executables inside a container
+	with -it and /bin/bash - you can go inside.
+
+- attach
+	it attached to pid 1
+
+2. Access a APP running inside from outside...using network 
+
+946  docker stop $(docker ps -a -q)
+  947  docker rm $(docker ps -a -q)
+  948  clear
+  949  docker ps -a
+  950  docker run --name ub1 ubuntu
+  951  docker
+  952  clear
+  953  docker ps -a
+  954  history
+  955  clear
+  956  docker ps -a
+  957  docker run -d jenkins/jenkins
+  958  docker ps
+  959  docker run -d ubuntu
+  960  docker ps
+  961  docker ps -a
+  962  /bin/bash
+  963  clear
+  964  docker ps -a
+  965  clear
+  966  docker ps
+  967  docker exec 96f10d68ec0c ls
+  968  docker exec 96f10d68ec0c ps -eaf
+  969  clear
+  970  docker exec 96f10d68ec0c df -kh
+  971  docker exec -it 96f10d68ec0c /bin/bash
+  972  ps -eaf
+  973  clear
+  974  clear
+  975  docker ps
+  976  docker attach 96f10d68ec0c
+  977  docker ps
+  978  docker psclear
+  979  clear
+  980  docker ps
+  981  docker run -it -d ubuntu /bin/bash
+  982  docker ps
+  983  docker run -it ubuntu /bin/bash
+  984  docker ps
+  985  docker ps -a
+  986  clear
+  987  history
+
+
+
+  989  docker ps
+  990  docker run -d jenkins/jenkins
+  991  docker ps
+  992  docker inspect 7aeff91535ea'
+  993  docker inspect 7aeff91535ea
+  994  clear
+  995  ping 172.17.0.3
+  996  curl http://172.17.0.3:8080
+  997  clear
+  998  docker run -d -p 8080:8080 jenkins/jenkins
+  999  docker run -d -p 8080:8080 jenkins/jenkins
+ 1000  docker run -d -p 8090:8080 jenkins/jenkins
+ 1001  history
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

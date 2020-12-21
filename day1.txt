@@ -1,0 +1,253 @@
+Rajesh Kumar
+===================
+8105843520
+-------------------
+Agenda
+-----------------------
+Docker		HALF
+SonarQube	HALF
+Jenkins		ONE
+Selenium	HALF
+Jmeter		HALF
+Jacoco		HALF
+DevSecOps - THEoRY	HALF
+====================================================
+====================================================
+What is Docker?
+---------------------
+	Container mgmt tool.
+	Release
+		Comm
+		Enter
+	Version
+		20.X
+	Open Source and Free
+	Written in Golang
+	by Soloman Hykes
+
+	tool
+	- save time
+	- save cost
+	- imp eff*
+	----------------------
+	For what?
+		TO RUN App(s) in Datacenter
+		Apps
+			jira - jenkins - sonar - ubuntu - rhel - mysql
+
+	Container
+		is your APP.
+		is Running your APP.
+		a init of USER NS  
+				with one attached MNT NS
+						PID NS
+						NET NS
+
+		APP run time env running inde?* with all resources required.
+
+================================================
+What are the resources we NEED to run any ONE APP?
+
+================================================
+Hardware
+	OS					CAN CREATE	ALLOWED BY OS	NEED FOR 1 AP
+	   Kernal
+			USER NS - USER		INFINITE	INFINITE	1	
+			MNT NS - MOUNT		INFINITE	1		1	
+			PID NS - PID		INFINITE	1		1
+			NET NS - NET		INFINITE	1		1		
+
+			CGROUP - Assign CPU and RAM
+			Capabilites - Assign root or non root
+	  Pre-re
+		Jira
+-------------------------
+Kernal -
+		=================
+The kernel is a computer program at the core of a computer's operating system that has complete control over everything in the system. 
+
+MOUNT
+	FileSystem
+	- Root filesystem
+	- User filesystem
+	- APP Pre + APP filesystem
+
+==============================================================================
+Evolution of Computing
+==============================================================================
+1990s...		Internet--- 2000		2020
+----------------------------------------------------------------------------
+PHSYCAL SERVER		Virutalization
+
+
+OS
+======================
+NOOOOOOOOOOO
+	WHY?
+	--- OS -- FOR PC. FOR HUMAN
+	
+
+========================================
+Architecture of Docker?
+---------------------------------------
+Human -> Docker Client ---REST API----> Docker Server -> ContainerD -> Kernal
+	 ===========================================
+			Docker Engine
+			- CE
+			- EE
+
+Components of Docker
+---------------------------------------
+- Docker Engine
+- Docker Image
+------CONTANS------------
+- Root FileSystem 	ubuntu - fedora - rhel - centos - win 2019
+- USER FileSystem `	jira - tomcat	
+- APP FileSystem 	jira - tomcat	
+
+	ONE COPY OF IMAGE - Get mounted to EACH CONTAINER
+
+- Docker Registry
+	- Collection of Repo
+		- repo has Image
+
+	hub.docker.com
+	google registry
+
+- Docker Container
+	When i "Run" "Docker Image" using "Docker Client"
+		ONE USER get created using USER NS...(ISOLATION)	 with COntD-Kernal
+		ONE COPY OF IMAGE get Mounted to USER			 with COntD-Kernal
+		ONE NETWORK get attached to user			with COntD-Kernal
+		ONE PID get attached to user					with COntD-Kernal
+
+
+- OS IMAGE
+-------------
+- Boot FileSystem ( Kernal )
+- Root FileSystem 
+- USER FileSystem 
+- APP FileSystem 
+
+
+How to install Docker?
+==========================================
+13.126.115.98
+User Name - centos
+Password - centos123
+
+
+https://www.devopsschool.com/tutorial/docker/install-config/docker-install-commuityedition-centos-rhel.html
+
+- Docker needs ROOT or user need to be part of Group called "docker"
+
+What is Workflow of Docker?
+======================================
+Human -> Client -> Server
+			Check "Do you have image in local registry"
+			YES ---- ContainerD--Kernal
+
+			NO 
+				Download image from hub.docker.com
+				ContainerD - Kernal		
+Working with COntainers...
+=============================
+LifeCycle of Containers...
+----------------------------
+Create -> Start -> Stop -> Restart -> Pause > Unpuase -> Kill -> Remove
+
+LifeCycle of Vms
+------------------------------------
+Create -> Start -> Stop -> Restart -> Pause > Unpuase -> Kill -> Remove
+
+=====
+sudo -s
+=====
+
+  8  docker -v
+    9  sudo systemctl enable docker
+   10  sudo systemctl start docker
+   11  docker info
+   12  clear
+   13  which docker
+   14  ps -eaf | grep docker
+   15  which containerd
+   16  clear
+   17  docker version
+   18  clear
+   19  docker info
+   20  clear
+   21  docker help
+   22  clear
+   23  docker images
+   24  docker ps
+   25  docker ps -a
+   26  docker images
+   27  docker pull jenkins/jenkins
+   28  docker images
+   29  clear
+   30  docker images
+   31  docker create --name rajesh1 jenkins/jenkins
+   32  docker ps
+   33  docker ps -a
+   34  docker create --name rajesh1 jenkins/jenkins
+   35  docker ps -a
+   36  docker create --name rajesh2 jenkins/jenkins
+   37  docker ps -a
+   38  clear
+   39  docker ps -a
+   40  docker start 699435d6db18
+   41  docker ps -a
+   42  docker stop 699435d6db18
+   43  docker ps -a
+   44  clear
+   45  docker start 699435d6db18
+   46  docker ps -a
+   47  docker ps -a
+   48  docker ps -a
+   49  clear
+   50  docker restart 699435d6db18
+   51  clear
+   52  docker ps -a
+   53  docker pause 699435d6db18
+   54  docker ps -a
+   55  docker unpause 699435d6db18
+   56  clear
+   57  docker ps -a
+   58  docker kill 699435d6db18
+   59  docker ps -a
+   60  docker rm 699435d6db18 9d5de6da5303
+   61  clear
+   62  docker ps -a
+   63  docker images
+   64  docker create --name rajesh2 jenkins/jenkins
+   65  docker create --name rajesh3 jenkins/jenkins
+   66  docker create --name rajesh4 jenkins/jenkins
+   67  docker create --name rajesh5 jenkins/jenkins
+   68  docker ps -a
+   69  docker create jenkins/jenkins
+   70  docker ps -a
+   71  clear
+   72  docker ps -a
+   73  docker start 55056080527e 35972600bbe0 fe957dd34d6a 63128cc24855 3c5c38fca97d
+   74  docker ps -a
+   75  docker stop  55056080527e 35972600bbe0 fe957dd34d6a 63128cc24855 3c5c38fca97d
+   76  docker ps -a
+   77  docker rm  55056080527e 35972600bbe0 fe957dd34d6a 63128cc24855 3c5c38fca97d
+   78  docker ps -a
+   79  history
+
+
+
+Lab === Do whatever i did.
+
+Assignment
+------------------
+Stop Vs Kill
+Pause Vs Unpause
+===========================================30 min===========================
+
+
+
+
+

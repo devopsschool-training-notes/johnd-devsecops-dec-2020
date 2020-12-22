@@ -1,0 +1,160 @@
+What is Jenkins?
+-----------------------------
+DevOpsSchool.com/videos
+
+	CI tool
+	Continous integration tool
+	Release
+		Jenkins Community 	========= Part of the session
+			FREE and Open Source
+		Jenkins Enterprise by Cloudbees
+		Jenkins X - Containers
+		Blue Ocean
+	Version
+		2.X
+	Written in Java
+	Empowered with 100s of plugins
+
+
+What is CI?
+-----------------------------
+Auto Build + Auto Testing
+-------------------------
+ 	Imm Feedback
+
+Plan -> Code -> Analysis -> Build -> UT -> Pack -> Archive -> Dep2Qa -> AT -> CC ->
+----------------------------------------------------------------------------
+						ALL PASSED - RELEASE
+						ONE FAILED - Repeat
+
+Jira -> Git -> SonarQube -> Maven -> Junit -> Jar -> Artifactory -> Ansible -> Sel -> Jacoco
+-----------------------------------------------------------------------------------
+			Integrate all Tools
+			Integrate all Phases
+			Integrate all Teams
+			Integrate all Process
+-----------------------------------------------------------------------------------------
+					Jenkins
+						Integration 
+						Immediate Feedback
+						Rich Dashboard
+						Work Scheduling cap
+	
+
+-> = Intergration
+==========================================================
+Other tools - Teamcity - Bambo - UBuild - Azure DevOps - Travis.CI
+---------------------------------------------------------------------
+			Paid
+
+
+Architecture of Jenkins
+==================================
+Server	- WEB 8080
+--------
+Dashboard
+	JOB Aka Project
+	   Step1 - build
+	   Step2 - test
+           Step3 - deploy
+
+
+Build Agent aka node
+	do the Real work...
+
+------------------------------------------------
+How to install jenkins?
+--------------------------
+	JAVA 
+	JENKINS
+
+52.66.240.209
+centos
+
+https://www.devopsschool.com/tutorial/jenkins/jenkins-installation-and-configuration.html
+
+sudo yum install wget -y
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+sudo yum upgrade
+sudo yum install jenkins java-1.8.0-openjdk-devel
+sudo systemctl daemon-reload
+
+sudo systemctl start jenkins
+sudo systemctl status jenkins
+
+==========================
+20 Mins
+-------------------------
+10.50 AM IST.
+==============================================================
+Formula for Setting up a Any Jenkins Job aka Project.
+==============================================================
+Q1. Where is the technology
+			- Java 		- Desire Compiler or Inter need to be in Build Server
+			- DOTNET 	- Desire Compiler or Inter need to be in Build Server
+			- PERL		- Desire Compiler or Inter need to be in Build Server
+			- Python	- Desire Compiler or Inter need to be in Build Server
+			- Ruby		- Desire Compiler or Inter need to be in Build Server
+Q2. Where is the source codee?
+		- Git 
+		- SVN
+			URL
+			USER Name
+			Password
+			Branch
+Q3 How often you want to Trigger this job?
+		Daily
+		Hourly
+		Weekly
+		Custom
+Q4. What is your Builder
+		Maven
+		Ant
+		Gradle
+		Msbuild	
+		Any Script
+		Shell
+		Batch
+Q.5 WHom you wnat this feedback to be delivered with.
+		email	rajesh@devopsschool.com
+		chat
+=================================================
+
+Q1. Where is the technology
+	JAVA
+
+Q2. Where is the source code?
+https://github.com/devops-school/helloworld-java-maven
+
+Q3 How often you want to Trigger this job?
+		hourly
+Q4. What is your Builder
+
+www.devopsschool.com/videos
+		maven
+		Phase		Goal
+		-----------------------------
+		compile		compile
+		UT		test
+		package		package
+		2 Local repo	install
+		2 Remote repo	deploy
+
+Q.5 WHom you want this feedback to be delivered with.
+		email	rajesh@devopsschool.com
+
+==================================================================
+Assignment# 1 - You need to do same as me.
+Assignment# 2 - Create a job with goal = test
+Assignment# 3 - Create a job with goal = package
+Assignment# 4 - Create a job with Ant Builder
+	https://github.com/scmgalaxy/helloworld-java-ant
+	Target -- ???
+Assignment# 5 - Keep all Jobs in a Folder - Named with your first name.
+	
+
+
+
+
+

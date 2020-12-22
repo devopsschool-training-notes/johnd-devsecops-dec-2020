@@ -153,7 +153,80 @@ Assignment# 4 - Create a job with Ant Builder
 	Target -- ???
 Assignment# 5 - Keep all Jobs in a Folder - Named with your first name.
 	
+========================================================
+Integration
+-------------------------------------
+Step 1 - Install Plugins
+Step 2 - Config Plugins
+Step 3 - Use Plugins in Jenkins Jobs
+-----------------------------------------
 
+Plan -> Code -> Analysis -> Build -> UT -> Pack -> Archive -> Dep2Qa -> AT -> CC ->
+----------------------------------------------------------------------------
+Jira -> Git -> SonarQube -> Maven -> Junit -> Jar -> Artifactory -> Ansible -> Sel -> Jacoco
+-----------------------------------------------------------------------------------
+				Jenkins
+
+How to integrate Jira with Jenkins?
+-----------------------------------------
+Objective - The moment Jenkins job fail. A ticket in jira should be created.
+
+-------------------------------------
+Step 1 - Install Docker		https://www.devopsschool.com/tutorial/docker/install-config/docker-install-commuityedition-centos-rhel.html
+Step 2 - Get a Jira App Running
+Step 3 - Install Jira Plugins the Jenkins Server
+Step 4 - Config Jira Plugin in the Jenkins Server Config
+Step 5 - Use Jira Plugins in Jenkins Jobs for 
+-----------------------------------------
+
+Jira
+http://52.66.240.209:8090/
+devops
+devops123
+
+SonarQube
+http://52.66.240.209:9000
+admin
+admin123
+
+
+  33  git --version
+   34  sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+   35  sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+   36  sudo yum install –y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+   37  sudo yum-config-manager --enable rhui-REGION-rhel-server-extras
+   38  sudo yum install -y docker-ce
+   39  sudo systemctl enable docker
+   40  sudo systemctl start docker
+   41  .clear
+   42  clear
+   43  cd
+   44  docker volume create --name jiraVolume
+   45  docker run -v jiraVolume:/var/atlassian/application-data/jira --name="jira" -d -p 8090:8080 atlassian/jira-software
+   46  docker run -d -p 9000:9000 sonarqube
+
+
+Youtube - TheDevOpsSchool
+
+How to integrate jenkins with SonarQube
+-----------------------------------------
+Objective - You can do analsys using Jenkins and results should be posted at Sonarqube.
+
+-------------------------------------
+Step 1 - Install Docker		https://www.devopsschool.com/tutorial/docker/install-config/docker-install-commuityedition-centos-rhel.html
+Step 2 - Get a SonarQube App Running
+Step 3 - Install SonarQube Scanner Plugins the Jenkins Server
+Step 4 - Add SonarQube server in the Jenkins Server Config
+Step 5 - Add SonarQube Scanner Tools in Global Tool Config
+Step 6 - Execute SonarQube Scanner on the Source Code in Jenkins job
+-----------------------------------------
+	https://github.com/devopsschool-demo-labs-projects/java-sonarqube-helloworld-src
+
+
+Artifactory
+admin
+password
+http://52.66.240.209:8090/
 
 
 

@@ -227,6 +227,102 @@ Artifactory
 admin
 password
 http://52.66.240.209:8090/
+=============================================================================
+
+Jenkins Scheduling Feature
+-------------------------------------------
+How can we Schedule a Job in Jenkins?
+=======================================================
+@Fixed Time 				== Build periodically
+@Fixed Time But only If SCM Change	== Poll SCM
+Build This Job If Other job are build.	== Build after other projects are built
+				i.e 
+				Trigger Automatically this job "Job1" of Job2 has been completed.
+Build Another Job After this job	== DONE
+Build this job using Script or API	== DONE
+https://www.devopsschool.com/blog/how-to-trigger-builds-remotely-in-jenkins/
+
+ASSIGNMENT
+====================
+Build this job when someone push to github/bitbucket
+https://www.devopsschool.com/blog/how-to-build-when-a-change-is-pushed-to-github-in-jenkins/
+
+
+Use the following URL to trigger build remotely: JENKINS_URL/job/RajeshFolder/job/job1/build?token=TOKEN_NAME or /buildWithParameters?token=TOKEN_NAME
+Optionally append &cause=Cause+Text to provide text that will be included in the recorded build cause.
+
+11c756c5b815254ac1d696b82b4c99b601
+
+http://52.66.240.209:8080/job/RajeshFolder/job/job1/build?token=TOKEN_NAME	
+http://52.66.240.209:8080/job/RajeshFolder/job/job1/build?
+
+wget --auth-no-challenge --user=devops --password=11c756c5b815254ac1d696b82b4c99b601 http://52.66.240.209:8080/job/RajeshFolder/job/job1/build?
+wget --auth-no-challenge --user=devops --password=11c756c5b815254ac1d696b82b4c99b601 --post-data http://52.66.240.209:8080/job/RajeshFolder/job/job1/build
+
+--post-data
+
+WORKING
+---------------------
+curl -X POST http://devops:11c756c5b815254ac1d696b82b4c99b601@52.66.240.209:8080/job/RajeshFolder/job/job1/build
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

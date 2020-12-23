@@ -1,0 +1,48 @@
+Plan -> Code -> Analyze -> Build -> Archive -> Dep2QA -> AT -> CC
+------------------------------------------------------------------
+Jira	Git 	SonarQube  Maven    Artifactory  Ansible FOCUS
+						- Performance Testing - Jmeter
+						- Functional Testing - Selenium
+						- Config mgmt Crash - Ansible
+						-------------------------------
+=================================================
+Docker Compose
+=================================================
+13.127.223.242
+
+
+What is the prb with Docker?
+- Too many commands for my APP which has multiple services.
+
+Docker Compose
+ONE Commands for all services
+	- Tools
+	- read docker.compose.yaml
+		contains
+			service(s)
+				service1 - web
+					image
+					build]
+					env
+					port
+					vol
+				service2 - APP
+				service3 - DB
+
+
+http://13.127.223.242/
+
+"Hello world"
+
+
+https://www.guru99.com/jmeter-performance-testing.html
+
+
+
+
+
+
+
+
+
+

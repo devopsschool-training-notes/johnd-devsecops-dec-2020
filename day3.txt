@@ -31,15 +31,34 @@ ONE Commands for all services
 
 
 http://13.127.223.242/
+http://13.127.223.242/wp-login.php
+admin
+admin123
 
 "Hello world"
 
 
 https://www.guru99.com/jmeter-performance-testing.html
 
+===========================================
+Selenium IDE
+=========================
+Step - 1 - Install Extention in Any Browsers
+		- Firefox
 
 
+Selenium Webdriver
+===============================
+Step 1 - Convert Selenese to Java Code 				DONE
+Step 2 - Load your Selenium lib into PATH and JAVA.		Using -cp
+Step 3 - Download Webdriver & set in the path			DONE 
+Step 4 - Run a Javafile and see the test results.
 
+javac -cp C:\tools\selenium\clients\selenium-java-3.141.59\libs\* example1.java
+java -cp "C:\tools\selenium\clients\selenium-java-3.141.59\libs\*;" example1
+
+javac -cp C:\tools\selenium\clients\selenium-java-3.141.59\libs\* WordpressTest.java
+java -cp "C:\tools\selenium\clients\selenium-java-3.141.59\libs\*;" example2.class
 
 
 

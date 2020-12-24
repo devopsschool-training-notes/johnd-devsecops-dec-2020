@@ -165,4 +165,62 @@ $ cp web.yaml <<yourname>>.yaml
 
 FINAL
 ansible-playbook -i inventory <<yourname>>.yaml -u centos --key-file=node.pem -b
+============================================
+Code Coverage
+--------------------------------------------
+What is Code Coverage?
+-----------------------------------
+	is a process to know
+	What is the Percentage of Code?? has been TESTED through Various Mode.
+	---------------------
+	100 CLASS --- 100 FEATURE
+	--------------------------
+		Tomcat
+	UT - AT
+	---------------
+	40% 60 80 90%
+	
+	Which Code is not TESTed?
+	What perentage of Code not tested?
+	--------------
+	Code Coverage is not a FUNCTIONAL Testing.
+
+
+	=======================================
+	TEST Coverage
+	=======================================
+	its a process to know Percentage of Test case has been used in TESTING'
+
+How this works!!!
+===============================
+Step 1- Instrumentations
+	Instrument your COde with One of the Code Coverage tools?
+
+Step 2 - Package Instrumentated APP - Code...
+
+Step 3 - Load that APP in APP SERVER
+
+Step 4 - Load CC tools
+
+Step 5 - START AT or Manual testing
+
+Step 6 - Get a data file and convert into reports
+=======================================================
+What are the Code Coverage tool
+--------------------------
+https://www.devopsschool.com/path/
+
+Jacoco
+----------------
+1. Install JDK and JAVA_HOME		DONE	 JDk8
+2. Install Mavan and Set a Path		DONE
+3. Download a Source Code with Jacoco enabled
+4. Run a test and coverage
+	$ mvn install
+5. Review a results under target dir.
+
+https://github.com/scmgalaxy/jacoco-maven-unittestv2
+
+
+
 
